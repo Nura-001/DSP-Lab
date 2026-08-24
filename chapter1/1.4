@@ -1,0 +1,39 @@
+% Program 1.4
+% Even and Odd components of the sequence
+% y(n) = u(n) - u(n-10)
+
+clc;
+close all;
+clear all;
+
+n = -15:1:15;
+
+y1 = [zeros(1,15), ones(1,10), zeros(1,6)];
+y2 = fliplr(y1);
+
+ye = 0.5*(y1+y2);
+yo = 0.5*(y1-y2);
+
+subplot(2,2,1);
+stem(n,y1);
+xlabel('Time -->');
+ylabel('Amplitude -->');
+title('y(n)');
+
+subplot(2,2,2);
+stem(n,y2);
+xlabel('Time -->');
+ylabel('Amplitude -->');
+title('y(-n)');
+
+subplot(2,2,3);
+stem(n,ye);
+xlabel('Time -->');
+ylabel('Amplitude -->');
+title('ye(n)');
+
+subplot(2,2,4);
+stem(n,yo);
+xlabel('Time -->');
+ylabel('Amplitude -->');
+title('yo(n)');
